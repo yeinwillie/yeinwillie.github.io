@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<link rel="stylesheet" href="style.css">
+
+<!-- Etiquetas HTML -->
+<img src="logoAlura.png" width="70px">
+
+<br>
+
+<textarea id="textoCodificar" cols="150" rows="30" placeholder="Ingrese el texto a codificar/decodificar"></textarea>
+<textarea  id="textoEncriptado" cols="40" rows="30" placeholder="Texto codificado/decodificado"></textarea>
+
+<br> 
+
+<p>❗Solo acepta minusculas sin acentuación</p>
+<div id="botonera">
+  <button id="btnCodificar">Codificar</button>
+  <button id="btnDecodificar">Decodificar</button>
+  <button id="btnCopiar" onclick="copyToClickBoard()">Copiar</button>
+</div>
+
+<!-- js -->
+
+<script>
+
+var signos = ["1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"," "];
+var designos = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "];
+var input = document.querySelector("#textoCodificar");
+var x = document.getElementById("textoEncriptado");
+
+var c = [];
+
+// Funcion Codificadora
+
+function encriptar (){
+  
+for (let i=0; i<input.value.length;i++){ 
+  if (input.value[i]==="a") {c.push(signos[0])}  
+  else if (input.value[i]==="b"){c.push(signos[1]);}
+  else if (input.value[i]==="c"){c.push(signos[2]);}
+  else if (input.value[i]==="d"){c.push(signos[3]);}
+  else if (input.value[i]==="e"){c.push(signos[4]);}
+  else if (input.value[i]==="f"){c.push(signos[5]);}
+  else if (input.value[i]==="g"){c.push(signos[6]);}
+  else if (input.value[i]==="h"){c.push(signos[7]);}
+  else if (input.value[i]==="i"){c.push(signos[8]);}
+  else if (input.value[i]==="j"){c.push(signos[9]);}
+  else if (input.value[i]==="k"){c.push(signos[10]);}
+  else if (input.value[i]==="l"){c.push(signos[11]);}
+  else if (input.value[i]==="m"){c.push(signos[12]);}
+  else if (input.value[i]==="n"){c.push(signos[13]);}
+  else if (input.value[i]==="o"){c.push(signos[14]);}
+  else if (input.value[i]==="p"){c.push(signos[15]);}
+  else if (input.value[i]==="q"){c.push(signos[16]);}
+  else if (input.value[i]==="r"){c.push(signos[17]);}
+  else if (input.value[i]==="s"){c.push(signos[18]);}
+  else if (input.value[i]==="t"){c.push(signos[19]);}
+  else if (input.value[i]==="u"){c.push(signos[20]);}
+  else if (input.value[i]==="v"){c.push(signos[21]);}
+  else if (input.value[i]==="w"){c.push(signos[22]);}
+  else if (input.value[i]==="x"){c.push(signos[23]);}
+  else if (input.value[i]==="y"){c.push(signos[24]);}
+  else if (input.value[i]==="z"){c.push(signos[25]);}
+  else if (input.value[i]===" "){c.push(signos[26]);}
+};
+
+mostrarEncriptacion ()
+c=[];  // se limpiar el array original para evitar crecimiento con cada palabra ya codificada
+input.value = ""; // se limpia la pantalla para escribir libremente una nueva palabra a codificar
+console.log(c);
+}
+
+// Funcion Decodificadora
+
+function desencriptar (){
+
+for (let i=0; i<input.value.length;i++){ 
+  if (input.value[i]==="1") {c.push(designos[0])}  
+  else if (input.value[i]==="2"){c.push(designos[1]);}
+  else if (input.value[i]==="3"){c.push(designos[2]);}
+  else if (input.value[i]==="4"){c.push(designos[3]);}
+  else if (input.value[i]==="5"){c.push(designos[4]);}
+  else if (input.value[i]==="6"){c.push(designos[5]);}
+  else if (input.value[i]==="7"){c.push(designos[6]);}
+  else if (input.value[i]==="8"){c.push(designos[7]);}
+  else if (input.value[i]==="9"){c.push(designos[8]);}
+  else if (input.value[i]==="a"){c.push(designos[9]);}
+  else if (input.value[i]==="b"){c.push(designos[10]);}
+  else if (input.value[i]==="c"){c.push(designos[11]);}
+  else if (input.value[i]==="d"){c.push(designos[12]);}
+  else if (input.value[i]==="e"){c.push(designos[13]);}
+  else if (input.value[i]==="f"){c.push(designos[14]);}
+  else if (input.value[i]==="g"){c.push(designos[15]);}
+  else if (input.value[i]==="h"){c.push(designos[16]);}
+  else if (input.value[i]==="i"){c.push(designos[17]);}
+  else if (input.value[i]==="j"){c.push(designos[18]);}
+  else if (input.value[i]==="k"){c.push(designos[19]);}
+  else if (input.value[i]==="l"){c.push(designos[20]);}
+  else if (input.value[i]==="m"){c.push(designos[21]);}
+  else if (input.value[i]==="n"){c.push(designos[22]);}
+  else if (input.value[i]==="o"){c.push(designos[23]);}
+  else if (input.value[i]==="p"){c.push(designos[24]);}
+  else if (input.value[i]==="q"){c.push(designos[25]);}
+  else if (input.value[i]===" "){c.push(designos[26]);}
+};
+
+mostrarDecencriptacion ()
+console.log(c);
+input.value = "";
+
+
+}
+
+// Funcion para mostrar por pantalla texto cifrado
+
+function mostrarEncriptacion () {
+
+ 
+  document.getElementById("textoEncriptado").innerHTML = c.join("");
+  
+}
+
+// Funcion para mostrar por pantalla texto decifrado
+
+function mostrarDecencriptacion () {
+
+ 
+  document.getElementById("textoEncriptado").innerHTML = c.join("");
+
+}
+
+// Btn-JS
+
+var button1 = document.querySelector("#btnCodificar"); 
+button1.onclick = encriptar;
+
+var button1 = document.querySelector("#btnDecodificar"); 
+button1.onclick = desencriptar;
+
+// btn-copiar js
+
+function copyToClickBoard(){
+
+    var content = document.getElementById('textoEncriptado').innerHTML;
+
+    navigator.clipboard.writeText(content)
+    c=[];
+    
+    }
+
+    </script>
+    
+</body>
+</html>

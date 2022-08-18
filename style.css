@@ -1,0 +1,90 @@
+html {
+    background-color: #dde8f7;
+}
+
+p{
+    margin-top: 0%;
+    margin-bottom: 0.2rem;
+}
+
+#textoEncriptado, #textoCodificar{
+    font-family:"Rubik Moonrocks" , sans-serif;
+    outline: none;
+    resize: none;
+    
+ }
+
+ #textoCodificar::placeholder{
+    padding-top: 150px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+ }
+
+ #textoEncriptado::placeholder{
+    padding-top: 10px;
+    font-size: 1rem;
+
+ }
+ #textoCodificar{
+    background-color: #dde8f7;
+    border: 0;
+    text-align: center;
+   
+      
+ }
+
+ #textoEncriptado{
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 22px; 
+    text-align:center;
+    
+ }
+
+ #botonera{
+    display: flex;
+    justify-content: center;  
+    width: 100%;
+    
+}
+ button {
+    border-radius: 1.5em;
+    border: none;
+    text-align: center;
+    padding: 0.85em 7em;  
+    cursor: pointer;
+   
+ }
+
+ #btnCodificar { 
+    background-color: #04396d;
+    color: #ffffff;
+ }
+
+ #btnDecodificar { 
+    background-color: #dde8f7;
+    border: 1px solid #677074;
+    margin-left: 1rem;
+ }
+
+ #btnDecodificar:hover {
+    background-color: #6798b3;
+    color: #dde8f7;
+}
+
+#btnCodificar:hover {
+    background-color: #6798b3;
+    color: #dde8f7;
+}
+
+#btnCopiar {
+    background-color: #dde8f7;
+    border: 1px solid #677074;
+    justify-self: end;
+    margin-left: 19rem;
+}
+
+#btnCopiar:hover {
+    background-color: #6798b3;
+    color: #dde8f7;
+}
